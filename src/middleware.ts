@@ -2,7 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(req: NextRequest) {
   const url = req.nextUrl;
-  if (!url.pathname.startsWith("/")) return;
+  if (
+    !url.pathname.startsWith(
+      "https://react-household-account-app-test-dev.vercel.app/"
+    )
+  )
+    return;
 
   const basicAuth = req.headers.get("authorization");
 
